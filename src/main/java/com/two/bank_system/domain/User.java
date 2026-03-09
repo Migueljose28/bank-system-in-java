@@ -1,8 +1,8 @@
 package com.two.bank_system.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
