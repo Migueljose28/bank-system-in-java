@@ -1,31 +1,24 @@
 package com.two.bank_system.domain;
 
-import com.two.bank_system.AccountStatus;
-
-import java.math.BigDecimal;
-import java.lang.Integer;
-import java.util.UUID;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@Entity
+@AllArgsConstructor
 public class Account {
+    private String name;
+    private Integer cpf;
+    private double balance;
+    private Integer accountNumber;
+    private String userEmail;
 
-    @Id
-    private UUID id;
-
-    private Integer number;
-
-    private BigDecimal balance;
-
-    private AccountStatus status;
-
+    public Account(String name, Integer cpf, String userEmail) {
+        this.name = name;
+        this.cpf = cpf;
+        this.balance = 0.0;
+        this.accountNumber = (int) (Math.random() * 1000000);
+        this.userEmail = userEmail;
+    }
 }
